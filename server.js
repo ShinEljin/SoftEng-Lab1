@@ -112,7 +112,10 @@ app.get("/resend-otp-su", (req, res) => {
     transporter.sendMail(message, function (err, info) {
       if (err) {
         console.log(err);
-        res.render("otp", {userEmail: currentUserEmail}, otpNote: "There's an error sending the otp");
+        res.render("otp", {
+          userEmail: currentUserEmail,
+          otpNote: "There's an error sending the otp",
+        });
       } else {
         res.render("otp", {
           userEmail: currentUserEmail,
