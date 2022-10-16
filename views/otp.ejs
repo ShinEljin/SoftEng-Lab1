@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/sucess-otp.css" />
+    <title>OTP Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="otp-text">One Time Password</h2>
+      <p class="code-sent-note">
+        We've sent a verification code to your<br />
+        email - <%=userEmail%>
+      </p>
+      <form action="/otp" method="post" class="otp-form">
+        <label for="otp">Enter the code:</label>
+        <input type="text" name="otp" id="otp-input" />
+        <p class="otp-note"><%= otpNote %></p>
+        <div class="otp-container">
+          <a href=""><button type="submit" class="otp-btn">Verify</button></a>
+        </div>
+      </form>
+      <div class="resend-container">
+        <a href="/resend-otp-su"><button class="resend-btn">Resend</button></a>
+      </div>
+
+      <hr />
+      <div class="otp-container">
+        <a href="/"><button class="b2l-btn">Back to Login</button></a>
+      </div>
+    </div>
+  </body>
+</html>

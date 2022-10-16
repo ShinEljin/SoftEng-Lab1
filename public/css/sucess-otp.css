@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --main-color: #822224;
+  --neutral-color: #063888;
+  --color-dark: #1d2231;
+  --text-gray: #8390a2;
+  --color-white: #fff;
+  --color-offwhite: #f0f0f0;
+  --color-offblack: #222;
+  --color-gold: #d5a106;
+  --color-green: 
+
+  --before-main-color: #dd2f6e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+      rgba(130, 34, 36, 0.8) 100%,
+      rgba(130, 34, 36, 0.8) 100%
+    ),
+    url("https://web1.plm.edu.ph/crs/images/plm_cover.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--neutral-color);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+.su-success-container,
+.login-success-container {
+  align-items: center;
+}
+
+.otp-container,
+.resend-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-text,
+.su-sucess-text {
+  color: var(--color-white);
+}
+
+.su-sucess-text {
+  font-weight: 500;
+}
+
+.otp-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.code-sent-note {
+  color: var(--color-gold);
+  background-color: var(--main-color);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0.8rem 0 0.5rem;
+}
+
+label {
+  color: white;
+  margin-bottom: 0.1rem;
+  margin-left: 3px;
+}
+
+input {
+  border-radius: 12px;
+  width: 300px;
+  height: 2.3rem;
+  margin-bottom: 1rem;
+  padding: 0.35em 0.7rem;
+  font-size: 1rem;
+}
+
+.otp-note {
+  color: var(--color-white);
+}
+
+.otp-btn,
+.resend-btn {
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  padding: 0.3rem 4rem;
+  margin-top: 1rem;
+
+}
+
+.resend-btn {
+  background-color: var(--color-gold);
+  font-size: 1rem;
+  padding: 0.3rem 3rem;
+  margin: 1rem auto 0;
+}
+
+hr {
+  width: 100%;
+  margin: 2rem 0 0.5rem;
+  border-color: var(--color-white);
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.b2l-btn {
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+a {
+  
+}
+

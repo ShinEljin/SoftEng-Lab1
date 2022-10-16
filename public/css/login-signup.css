@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --main-color: #822224;
+  --neutral-color: #063888;
+  --color-dark: #1d2231;
+  --text-gray: #8390a2;
+  --color-white: #fff;
+  --color-offwhite: #f0f0f0;
+  --color-offblack: #222;
+  --color-gold: #d5a106;
+
+  --before-main-color: #dd2f6e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+      rgba(130, 34, 36, 0.8) 100%,
+      rgba(130, 34, 36, 0.8) 100%
+    ),
+    url("https://web1.plm.edu.ph/crs/images/plm_cover.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--neutral-color);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+.login-text,
+.signup-text {
+  color: var(--color-white);
+}
+
+.login-form,
+.signup-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+label {
+  color: white;
+  margin-bottom: 0.1rem;
+  margin-left: 3px;
+}
+
+input {
+  border-radius: 12px;
+  width: 300px;
+  height: 2.3rem;
+  margin-bottom: 1rem;
+  padding: 0.35em 0.7rem;
+  font-size: 1rem;
+}
+
+.login-note,
+.signup-note {
+  color: var(--color-white);
+}
+
+.login-btn,
+.signup-btn {
+  background-color: var(--color-gold);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  padding: 0.2rem 0.5rem;
+  margin-top: 1rem;
+}
+
+.signup-text-footer,
+.login-text-footer {
+  margin-top: 3rem;
+  color: var(--color-white);
+}
+
+hr {
+  width: 100%;
+  margin-top: 3rem;
+  border-color: var(--color-white);
+}
+
+a {
+  color: #d5a106;
+  text-decoration: underline;
+  font-weight: 600;
+}

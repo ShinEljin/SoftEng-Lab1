@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login-signup.css" />
+    <title>Sign Up Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="signup-text">SIGN UP</h2>
+      <form action="/signup" method="post" class="signup-form">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="signup-email-input" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="signup-password-input" />
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          id="signup-confirm-password-input"
+        />
+        <p class="signup-note"><%= suNote %></p>
+        <button type="Submit" class="signup-btn">Login</button>
+      </form>
+
+      <hr />
+
+      <p class="login-text-footer">
+        Already have an account? <a href="/login">LOGIN</a>
+      </p>
+    </div>
+  </body>
+</html>
