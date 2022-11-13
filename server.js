@@ -138,47 +138,52 @@ app.post("/login", (req, res) => {
   const userPassword = req.body.password;
   const hashedPassword = md5(userPassword);
 
-  User.findOne({ email: userEmail }, (err, foundUser) => {
-    if (err) {
-      loginNote = err;
-      res.redirect("/login");
-    } else {
-      if (foundUser) {
-        if (hashedPassword === foundUser.password) {
-          currentUserEmail = userEmail;
-          currentUserPassword = userPassword;
-          OTPCode = "";
-          for (let i = 0; i <= 5; i++) {
-            OTPCode += Math.floor(Math.random() * 10);
-          }
-          message = {
-            from: "elleinc.rpe@gmail.com",
-            to: userEmail,
-            subject: "OTP Code",
-            text: OTPCode,
-          };
-
-          transporter.sendMail(message, function (err, info) {
-            if (err) {
-              loginNote = err;
-              res.redirect("/signup");
-            } else {
-              res.render("otp-login", {
-                userEmail: currentUserEmail,
-                otpNote: otpNote,
-              });
+  if (userEmail === "") {
+    loginNote = "Please input your email";
+    res.redirect("/login");
+  } else {
+    User.findOne({ email: userEmail }, (err, foundUser) => {
+      if (err) {
+        loginNote = err;
+        res.redirect("/login");
+      } else {
+        if (foundUser) {
+          if (hashedPassword === foundUser.password) {
+            currentUserEmail = userEmail;
+            currentUserPassword = userPassword;
+            OTPCode = "";
+            for (let i = 0; i <= 5; i++) {
+              OTPCode += Math.floor(Math.random() * 10);
             }
-          });
+            message = {
+              from: "elleinc.rpe@gmail.com",
+              to: userEmail,
+              subject: "OTP Code",
+              text: OTPCode,
+            };
+
+            transporter.sendMail(message, function (err, info) {
+              if (err) {
+                loginNote = err;
+                res.redirect("/signup");
+              } else {
+                res.render("otp-login", {
+                  userEmail: currentUserEmail,
+                  otpNote: otpNote,
+                });
+              }
+            });
+          } else {
+            loginNote = "Password incorrect";
+            res.redirect("/login");
+          }
         } else {
-          loginNote = "Password incorrect";
+          loginNote = "Email not found";
           res.redirect("/login");
         }
-      } else {
-        loginNote = "Email not found";
-        res.redirect("/login");
       }
-    }
-  });
+    });
+  }
 });
 
 app.post("/signup", (req, res) => {
