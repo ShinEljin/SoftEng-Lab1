@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const ejs = require("ejs");
 const md5 = require("md5");
@@ -18,14 +19,12 @@ let transporter = nodemailer.createTransport({
   host: "smtp.elasticemail.com",
   port: 2525,
   auth: {
-    user: "elleinc.rpe@gmail.com",
-    pass: "0DD2AB94AB05552BE9CEE94EC5588BEE8651",
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
 });
 
-const url =
-  "mongodb+srv://admin-raphael:Scnlhpr.062202@cluster0.flkrs.mongodb.net/accountsDB";
-mongoose.connect(url, (err) => {
+mongoose.connect(process.env.MONGO_URL, (err) => {
   if (err) {
     console.log(err.message);
   } else {
