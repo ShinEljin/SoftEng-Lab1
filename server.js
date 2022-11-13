@@ -18,14 +18,20 @@ let transporter = nodemailer.createTransport({
   host: "smtp.elasticemail.com",
   port: 2525,
   auth: {
-    user: "otpsender@gmail.com",
-    pass: "223871B5CDD491F23F6DB26013D9A2A4BC00",
+    user: "elleinc.rpe@gmail.com",
+    pass: "0DD2AB94AB05552BE9CEE94EC5588BEE8651",
   },
 });
 
 const url =
   "mongodb+srv://admin-raphael:Scnlhpr.062202@cluster0.flkrs.mongodb.net/accountsDB";
-mongoose.connect(url);
+mongoose.connect(url, (err) => {
+  if (err) {
+    console.log(err.message);
+  } else {
+    console.log("Database connected");
+  }
+});
 
 const userSchema = mongoose.Schema({
   email: String,
@@ -214,7 +220,7 @@ app.post("/signup", (req, res) => {
     });
   } else {
     suNote = "Passwords not match";
-    res.redirect("/signup");
+    res.redirect("/signup", { suNote });
   }
 });
 
