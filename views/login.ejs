@@ -13,9 +13,19 @@
 
       <form action="/login" method="post" class="login-form">
         <label for="email">Email</label>
-        <input type="email" name="email" id="login-email-input" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value="<%= typeof email != 'undefined' ? email : '' %>"
+        />
         <label for="password">Password</label>
-        <input type="password" name="password" id="login-password-input" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value="<%= typeof password  != 'undefined' ? password  : '' %>"
+        />
         <p class="login-note"><%= loginNote %></p>
         <button type="Submit" class="login-btn">Login</button>
       </form>

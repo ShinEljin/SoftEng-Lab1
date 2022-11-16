@@ -106,3 +106,8 @@ a {
   text-decoration: underline;
   font-weight: 600;
 }
+
+.pw-cond {
+  color: green;
+  font-size: 14px;
+}

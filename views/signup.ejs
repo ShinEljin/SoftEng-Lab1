@@ -12,19 +12,33 @@
       <h2 class="signup-text">SIGN UP</h2>
       <form action="/signup" method="post" class="signup-form">
         <label for="email">Email</label>
-        <input type="email" name="email" id="signup-email-input" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value="<%= typeof email != 'undefined' ? email : '' %>"
+        />
         <label for="password">Password</label>
-        <input type="password" name="password" id="signup-password-input" />
-        <label for="confirm-password">Confirm Password</label>
         <input
           type="password"
-          name="confirmPassword"
-          id="signup-confirm-password-input"
+          id="password"
+          name="password"
+          value="<%= typeof password != 'undefined' ? password : '' %>"
+        />
+        <label for="password2">Confirm Password</label>
+        <input
+          type="password"
+          id="password2"
+          name="password2"
+          value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
         />
         <p class="signup-note"><%= suNote %></p>
+        <p class="pw-cond">
+          Password should have uppercase, <br />lowercase, number, and special
+          char
+        </p>
         <button type="Submit" class="signup-btn">SIGN UP</button>
       </form>
-
       <hr />
 
       <p class="login-text-footer">
